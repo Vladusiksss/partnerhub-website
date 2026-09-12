@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartnerHub — Taxi &amp; Driver Partnership</title>
+    <meta name="description" content="PartnerHub — taxi, courier and fleet partnership services in Poland.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <img src="img/logo/header_logo1.png" alt="PartnerHub Logo" class="logo-img">
+                <span data-translate="brand">PartnerHub</span>
+            </a>
+            <nav>
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="nav-items" id="nav-items">
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="taxi">
+                            <span data-translate="taxi">Такси</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="taxi-dropdown">
+                            <a href="#" class="dropdown-item" data-translate="driverDocs" data-modal="driver-docs">Документы для водителя</a>
+                            <a href="#" class="dropdown-item" data-translate="vehicleDocs" data-modal="vehicle-docs">Документы для машины</a>
+                            <a href="#" class="dropdown-item" data-translate="docAddresses" data-modal="doc-addresses">Адреса для получения документов</a>
+                            <a href="#" class="dropdown-item" data-translate="pricing" data-modal="pricing">Ценник</a>
+                            <a href="https://t.me/PartnerHubot" class="dropdown-item" target="_blank" data-translate="chatConsultant">Чат с консультантом</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="delivery">
+                            <span data-translate="delivery">Доставка</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="delivery-dropdown">
+                            <a href="#" class="dropdown-item" data-translate="courierDocs">Документы для курьера</a>
+                            <a href="#" class="dropdown-item" data-translate="transportMode">Способ передвижения</a>
+                            <a href="#" class="dropdown-item" data-translate="deliveryPricing">Ценник</a>
+                            <a href="https://t.me/PartnerHubot" class="dropdown-item" target="_blank" data-translate="chatConsultant">Чат с консультантом</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="employment">
+                            <span data-translate="employment">Трудоустройство / Сотрудничество</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="employment-dropdown">
+                            <a href="#" class="dropdown-item" data-translate="taxiEmployment" data-modal="taxi-employment">Трудоустройство для водителя такси</a>
+                            <a href="#" class="dropdown-item" data-translate="courierEmployment">Трудоустройство для курьера</a>
+                            <a href="#" class="dropdown-item" data-translate="b2b" data-modal="b2b">Сотрудничество по B2B</a>
+                            <a href="https://t.me/PartnerHubot" class="dropdown-item" target="_blank" data-translate="chatConsultant">Чат с консультантом</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="fleets">
+                            <span data-translate="forFleets">Для автопарков</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="fleets-dropdown">
+                            <a href="#" class="dropdown-item" data-translate="getExtracts" data-modal="fleet-extracts">Хочу выписы на свои авто под вашего партнера</a>
+                            <a href="#" class="dropdown-item" data-translate="rentVehicles" data-modal="fleet-rent">Хочу сдать вам машины и просто получать прибыль</a>
+                            <a href="#" class="dropdown-item" data-translate="subleasing" data-modal="fleet-subleasing">Сотрудничество субаренды (3 сторонний договор)</a>
+                            <a href="https://t.me/PartnerHubot" class="dropdown-item" target="_blank" data-translate="chatConsultant">Чат с консультантом</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="offers">
+                            <span data-translate="forNewOffers">Для новых предложений / коллабораций</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="offers-dropdown">
+                            <a href="#" class="dropdown-item" data-translate="collaborationProposal">У меня есть предложение о коллаборации</a>
+                            <a href="#" class="dropdown-item" data-translate="cooperationOffer">У меня предложение о сотрудничестве</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <button class="nav-button" data-dropdown="contacts">
+                            <span data-translate="contacts">Контакты</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown" id="contacts-dropdown">
+                            <a href="https://t.me/PartnerHubot" class="dropdown-item" target="_blank" data-translate="telegram">Телеграм</a>
+                            <a href="tel:+48794736063" class="dropdown-item" data-translate="phone">📞Телефон: +48 794 736 063</a>
+                            <a href="mailto:taxipartnerhub@gmail.com" class="dropdown-item" data-translate="email">✉️Написать email</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="language-button" id="language-button">
+                        <svg class="language-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span data-translate="language">RU</span>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <div class="language-item" data-lang="ru">Русский</div>
+                        <div class="language-item" data-lang="pl">Polski</div>
+                        <div class="language-item" data-lang="en">English</div>
+                        <div class="language-item" data-lang="uk">Українська</div>
+                        <div class="language-item" data-lang="ge">ქართული</div>
+                        <div class="language-item" data-lang="uz">O'zbek</div>
+                        <div class="language-item" data-lang="am">Հայերեն</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="welcome-title-container">
+                <h1 class="hero-title" data-translate="welcomePartner">Приветствуем</h1>
+            </div>
+            <div class="welcome-text-container">
+                <p class="welcome-text" data-translate="noHiddenFees">🚖 100 злотых в неделю — без скрытых оплат</p>
+                <p class="welcome-text" data-translate="bonus">🎁 Бонус за каждого приведённого друга</p>
+                <p class="welcome-text" data-translate="promotions">🎉 Акции и розыгрыши</p>
+                <p class="welcome-text" data-translate="legalization">🌍 Легализация под ключ (приглашение на визу, Карта Побыту)</p>
+                <p class="welcome-text" data-translate="officialEmployment">📝 Официальное трудоустройство</p>
+            </div>
+			
+            <div class="btn-container">
+                <button class="custom-btn" data-translate="joinTeam" onclick="window.open('https://t.me/PartnerHubot', '_blank')">
+                    Присоединяйтесь к нам
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlays -->
+    <!-- Driver Documents Modal -->
+    <div class="modal-overlay" id="driver-docs-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="driverDocsTitle">Документы для водителя</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="driverDocsIntro">Чтобы начать работать в такси, необходимо получить Идентификатор (лицензию для водителя). Для этого вам нужно собрать несколько документов и принести их в наш офис для подачи. Вот полный список:</p>
+                    <ul class="modal-list">
+                        <li data-translate="driverDoc1">Справка о несудимости из вашей страны и её присяжный перевод. Перевод можно заказать в фирме, зарегистрированной в Польше. (Обратите внимание: если вы находитесь в Польше по международной защите, Карте Поляка или имеете сталый побыт, справка о несудимости из вашей страны не требуется.)</li>
+                        <li data-translate="driverDoc2">Справка о несудимости в Польше.</li>
+                        <li data-translate="driverDoc3">Медицинская справка для работы в такси.</li>
+                        <li data-translate="driverDoc4">Справка от психиатра для работы в такси.</li>
+                        <li data-translate="driverDoc5">Польские водительские права.</li>
+                        <li data-translate="driverDoc6">Фотография 3,5х4,5 см.</li>
+                        <li data-translate="driverDoc7">Документы легализации для всех граждан, кроме Украины.</li>
+                    </ul>
+                    <p data-translate="driverDocsHelp">Мы поможем вам с оформлением и подачей документов, чтобы вы могли как можно быстрее начать работать!</p>
+                </div>
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vehicle Documents Modal -->
+    <div class="modal-overlay" id="vehicle-docs-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="vehicleDocsTitle">Документы для автомобиля</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="vehicleDocsIntro">Чтобы зарегистрировать автомобиль для работы в такси, необходимы следующие документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="vehicleDoc1">Техпаспорт с печатью такси и актуальным техосмотром.</li>
+                        <li data-translate="vehicleDoc2">Документ-соглашение о разрешении использования авто в такси (оформляется в нашем офисе).</li>
+                        <li data-translate="vehicleDoc3">Договор лизинга с разрешением на субаренду и использование авто в такси (для лизинговых автомобилей).</li>
+                    </ul>
+                    <p data-translate="vehicleDocsTime">⏳ Оформление выписа из лицензии занимает 3–6 месяцев.</p>
+                    <p data-translate="vehicleDocsWarning">🚫 Машина без выписа не может работать в такси.</p>
+                    
+                    <div class="modal-highlight">
+                        <h4 data-translate="vehicleDocsQuick">⚡ Хотите начать работать сразу?</h4>
+                        <p data-translate="vehicleDocsQuickInfo">У нас можно приобрести готовый выпис и выйти на линию всего за 2–3 дня!</p>
+                        <p data-translate="vehicleDocsQuickNote">📌 Количество выписов ограничено, уточняйте у консультанта.</p>
+                    </div>
+                </div>
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Addresses Modal -->
+    <div class="modal-overlay" id="doc-addresses-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="docAddressesTitle">Адреса для получения документов</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="docAddressesIntro">Адреса для получения документов с лояльным отношением к иностранцам</h3>
+                    
+                    <div class="modal-address">
+                        <h4 class="modal-address-title" data-translate="criminalRecord">✅ Справка о несудимости</h4>
+                        <p data-translate="criminalRecordInfo">Получить можно в любом районном суде. Рекомендуем:</p>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-translate="criminalRecordAddress">Sąd Rejonowy dla Warszawy Pragi - Południe, ul. Terespolska 15a, 03-813 Warszawa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-address">
+                        <h4 class="modal-address-title" data-translate="translation">✅ Присяжный перевод справки о несудимости</h4>
+                        <p data-translate="translationInfo">Перевод можно сделать у любого присяжного переводчика. Рекомендуем:</p>
+                        
+                        <h5 data-translate="translationRussian">🔹 Русский / Белорусский / Украинский / Английский</h5>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            <span data-translate="translationRussianName">KMK Biuro Tłumaczeń</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-translate="translationRussianAddress">ul. Powstańców Śląskich 1/45, 01-381 Warszawa</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span data-translate="translationRussianPhone">+48 501-155-325</span>
+                        </div>
+                        
+                        <h5 data-translate="translationOther">🔹 Узбекский / Турецкий / Армянский / Румынский / Молдавский / Грузинский / Греческий / Арабский</h5>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            <span data-translate="translationOtherName">Tłumacz in Poland</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-translate="translationOtherAddress">ul. Marszałkowska 2 (domofon 11), 00-581 Warszawa</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span data-translate="translationOtherPhone">+48 888 08 44 32 | +48 505 704 067</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span data-translate="translationOtherEmail">warszawa.tlumacz@wawabiuro.com</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span data-translate="translationOtherHours">Пн–Пт: 9:00–15:00</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                            <span data-translate="translationOtherMessenger">Viber/WhatsApp: +48 505 704 067</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-address">
+                        <h4 class="modal-address-title" data-translate="medicalCert">✅ Справка от врача и психиатра для водителя такси</h4>
+                        <p data-translate="medicalCertInfo">(В справках обязательно должно быть указано, что они выданы для работы в такси.)</p>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-translate="medicalCertAddress">Trakt Brzeski 94a, 05-070 Sulejówek</span>
+                        </div>
+                        <div class="modal-contact">
+                            <svg class="icon modal-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span data-translate="medicalCertPhone">+48 730 234 236</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-address">
+                        <h4 class="modal-address-title" data-translate="drivingLicense">📍 Польские водительские права</h4>
+                        <p data-translate="drivingLicenseInfo">Получить можно в любой районной администрации после 6 месяцев легального проживания в Польше.</p>
+                        <p data-translate="drivingLicenseMore">📌 Больше информации у нашего консультанта.</p>
+                    </div>
+                </div>
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div class="modal-overlay" id="pricing-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="pricingTitle">Стоимость оформления документов</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <ul class="modal-list">
+                        <li data-translate="pricingId">✅ Идентификатор (лицензия для водителя) – БЕСПЛАТНО</li>
+                        <li data-translate="pricingCriminal">
+                            ✅ Справка о несудимости (Польша):<br>
+                            🔹 Если оформляем мы – 70 PLN<br>
+                            🔹 Если оформляете самостоятельно – 30 PLN
+                        </li>
+                        <li data-translate="pricingLicense">
+                            ✅ Польские водительские права (с нашим сопровождением)<br>
+                            🔹 При наличии всех документов – 300 PLN
+                        </li>
+                        <li data-translate="pricingExtract">
+                            ✅ Выпис из лицензии:<br>
+                            🔹 Обычное оформление (3–6 месяцев) – 50 PLN<br>
+                            🔹 Срочное оформление (1–3 дня) – 350 PLN (количество ограничено!)
+                        </li>
+                    </ul>
+                </div>
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taxi Employment Modal -->
+    <div class="modal-overlay" id="taxi-employment-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="taxiEmploymentTitle">Трудовой договор: условия трудоустройства</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="forUkrainians">🇺🇦 Для граждан Украины</h3>
+                    <p data-translate="ukrainianDocsNeeded">✅ Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="ukrainianDoc1">Паспорт</li>
+                        <li data-translate="ukrainianDoc2">Польский идентификационный номер (PESEL)</li>
+                    </ul>
+                    <p data-translate="ukrainianNote1">📌 Если у вас есть международная защита, карта резидента, карта поляка, сталый побыт или диплом польского университета, обязательно возьмите их с собой.</p>
+                    <p data-translate="ukrainianNote2">📌 Студентам также необходимо предоставить студенческий билет и справку из учебного заведения.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="forBelarusians">🇧🇾🇬🇪🇦🇲🇲🇩 Для граждан Беларуси, Грузии, Армении, Молдовы</h3>
+                    <p data-translate="belarusianDocsNeeded">✅ Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="belarusianDoc1">Паспорт</li>
+                        <li data-translate="belarusianDoc2">Документ легализации (основанный на работе или учебе)</li>
+                        <li data-translate="belarusianDoc3">Разрешение на работу (оформляется работодателем, срок изготовления – до 10 рабочих дней)</li>
+                    </ul>
+                    <p data-translate="belarusianNote1">📌 Если вы уже трудоустроены в другой компании, потребуется подтверждение ежемесячных оплат ZUS и ваш трудовой договор.</p>
+                    <p data-translate="belarusianNote2">📌 Если у вас есть международная защита, карта резидента, карта поляка, сталый побыт или диплом польского университета, разрешение на работу не требуется.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="forEuropeans">🇪🇺 Для граждан европейских стран</h3>
+                    <p data-translate="europeanDocsNeeded">✅ Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="europeanDoc1">Паспорт или ID-карта</li>
+                        <li data-translate="europeanDoc2">Подтверждённая дата въезда в Польшу (Если вы не гражданин Польши)</li>
+                    </ul>
+                    <p data-translate="europeanNote1">📌 Вы можете работать без разрешения на работу до 3 месяцев с момента въезда.</p>
+                    <p data-translate="europeanNote2">📌 Если у вас есть международная защита, карта резидента, карта поляка, сталый побыт или диплом польского университета, разрешение на работу не требуется.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="forOthers">🇺🇿🇦🇿🇹🇲🇹🇷 Для граждан Узбекистана, Азербайджана, Туркменистана, Турции и других стран</h3>
+                    <p data-translate="othersDocsNeeded">✅ Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="othersDoc1">Паспорт</li>
+                        <li data-translate="othersDoc2">Польские водительские права</li>
+                        <li data-translate="othersDoc3">Документ, подтверждающий вашу легализацию (основанный на работе или учебе)</li>
+                        <li data-translate="othersDoc4">Разрешение на работу (оформляется работодателем, срок изготовления 3–6 месяцев)</li>
+                    </ul>
+                    <p data-translate="othersNote1">📌 Если вы уже трудоустроены, необходимо подтверждение ежемесячных оплат ZUS и ваш трудовой договор.</p>
+                    <p data-translate="othersNote2">📌 Если у вас есть международная защита, карта резидента, карта поляка, сталый побыт или диплом польского университета, разрешение на работу не требуется.</p>
+                </div>
+                
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- B2B Modal -->
+    <div class="modal-overlay" id="b2b-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="b2bTitle">Сотрудничество по B2B</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="b2bIntro">Чтобы работать с нами по B2B-договору, вам необходимо:</p>
+                    <ul class="modal-list">
+                        <li data-translate="b2bReq1">✅ Предоставить данные вашей компании</li>
+                        <li data-translate="b2bReq2">✅ Подписать договор с нами</li>
+                    </ul>
+                    <p data-translate="b2bImportant">📌 Важно! Ваша фирма должна иметь открытый код PKD:</p>
+                    <ul class="modal-list">
+                        <li data-translate="b2bPKD">49.31.Z или 49.39.Z (по рекомендации вашего бухгалтера)</li>
+                    </ul>
+                    <p data-translate="b2bReady">Готовы к сотрудничеству? Свяжитесь с нами! 🚀</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title" data-translate="workPermitTitle">Разрешение на работу в Польше</h3>
+                    
+                    <h4 data-translate="workPermitBelarusians">🇧🇾🇲🇩🇦🇲🇬🇪 Для граждан Беларуси, Молдовы, Армении, Грузии</h4>
+                    <ul class="modal-list">
+                        <li data-translate="workPermitBelarusianTime">⏳ Срок изготовления: до 10 рабочих дней</li>
+                        <li data-translate="workPermitBelarusianValidity">📆 Срок действия: 2 года</li>
+                        <li data-translate="workPermitBelarusianInfo">✅ Позволяет официально трудоустроиться в Польше и оформить визу.</li>
+                    </ul>
+                    <p data-translate="workPermitBelarusianDocs">📌 Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="workPermitDoc1">Скан всех заполненных страниц паспорта (разворот)</li>
+                        <li data-translate="workPermitDoc2">Скан польских водительских прав (обе стороны)</li>
+                        <li data-translate="workPermitDoc3">Оплата</li>
+                    </ul>
+                    
+                    <h4 data-translate="workPermitOthers">🇦🇿🇹🇲🇺🇿🇹🇷 Для граждан Азербайджана, Туркменистана, Узбекистана, Турции и других стран, не входящих в ЕС</h4>
+                    <ul class="modal-list">
+                        <li data-translate="workPermitOthersTime">⏳ Срок изготовления: 3–6 месяцев</li>
+                        <li data-translate="workPermitOthersValidity">📆 Срок действия: 1 год</li>
+                        <li data-translate="workPermitOthersInfo">✅ Позволяет официально трудоустроиться в Польше и оформить визу.</li>
+                    </ul>
+                    <p data-translate="workPermitOthersDocs">📌 Необходимые документы:</p>
+                    <ul class="modal-list">
+                        <li data-translate="workPermitDoc1">Скан всех заполненных страниц паспорта (разворот)</li>
+                        <li data-translate="workPermitDoc2">Скан польских водительских прав (обе стороны)</li>
+                        <li data-translate="workPermitDoc3">Оплата</li>
+                        <li data-translate="workPermitDoc4">Документ из уженда, подтверждающий, что на данную вакансию не претендует польский гражданин (оформляет работодатель).</li>
+                    </ul>
+                    <p data-translate="workPermitOthersNote">(Из-за последнего документа срок ожидания увеличивается.)</p>
+                    
+                    <h4 data-translate="workPermitUkrainians">🇺🇦 Для граждан Украины</h4>
+                    <p data-translate="workPermitUkrainiansInfo">В связи с войной разрешение на работу не требуется.</p>
+                    <p data-translate="workPermitReady">📌 Готовы оформить документы? Свяжитесь с нашим консультантом! 🚀</p>
+                </div>
+                
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fleet Extracts Modal -->
+    <div class="modal-overlay" id="fleet-extracts-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="fleetExtractsTitle">Выпис из лицензии на авто</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="fleetExtractsIntro">Для оформления выписа из лицензии необходимо:</p>
+                    <ul class="modal-list">
+                        <li data-translate="fleetExtractsReq1">✅ Техпаспорт с печатью такси и актуальным техосмотром</li>
+                        <li data-translate="fleetExtractsReq2">✅ Договор на использование авто в такси (оформляется в нашем офисе между нашей фирмой и владельцем автомобиля)</li>
+                        <li data-translate="fleetExtractsReq3">✅ Скан лизингового договора (для лизинговых авто) – должен содержать разрешение на использование машины в такси и сдачу в аренду.</li>
+                    </ul>
+                    <p data-translate="fleetExtractsPrice">💰 Стоимость выписа зависит от условий сотрудничества и обсуждается с руководством.</p>
+                    <p data-translate="fleetExtractsReady">📌 Оформите выпис и начните зарабатывать уже в ближайшие дни! 🚖</p>
+                </div>
+                
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fleet Rent Modal -->
+    <div class="modal-overlay" id="fleet-rent-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="fleetRentTitle">Аренда авто под партнёра</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="fleetRentIntro">Хотите сдать авто в аренду напрямую нам и не искать водителей самостоятельно?</p>
+                    <ul class="modal-list">
+                        <li data-translate="fleetRentBenefit1">✅ Бесплатные выписы на авто</li>
+                        <li data-translate="fleetRentBenefit2">✅ Официальный договор аренды между владельцем авто и нашей фирмой</li>
+                        <li data-translate="fleetRentBenefit3">✅ Гарантированные выплаты</li>
+                    </ul>
+                    <p data-translate="fleetRentNote">📌 Все условия обговариваются индивидуально с руководством. Свяжитесь с нами для деталей! 🚖</p>
+                </div>
+                
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fleet Subleasing Modal -->
+    <div class="modal-overlay" id="fleet-subleasing-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" data-translate="fleetSubleasingTitle">Субаренда / Трёхсторонний договор</h2>
+                <button class="modal-close" aria-label="Close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <p data-translate="fleetSubleasingIntro">Переживаете, что водитель может не выплатить аренду вовремя?</p>
+                    <p data-translate="fleetSubleasingDesc">Мы предлагаем договор субаренды, который подписывается между:</p>
+                    <ul class="modal-list">
+                        <li data-translate="fleetSubleasingParty1">✅ Фирмой</li>
+                        <li data-translate="fleetSubleasingParty2">✅ Владельцем авто</li>
+                        <li data-translate="fleetSubleasingParty3">✅ Водителем</li>
+                    </ul>
+                    <ul class="modal-list">
+                        <li data-translate="fleetSubleasingBenefit1">🔹 Фиксированная стоимость аренды</li>
+                        <li data-translate="fleetSubleasingBenefit2">🔹 Гарантированные выплаты владельцу авто</li>
+                        <li data-translate="fleetSubleasingBenefit3">🔹 Фирма берет на себя ответственность за оплату аренды</li>
+                    </ul>
+                    <p data-translate="fleetSubleasingNote">📌 Все условия обговариваются индивидуально с руководством. Свяжитесь с нами для деталей! 🚖</p>
+                </div>
+                
+                <button class="modal-back">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span data-translate="backToMain">Вернуться на главную</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title" data-translate="aboutUs">О НАС</h2>
+                <div class="prose">
+                    <p data-translate="aboutIntro">
+                        PartnerHub — это больше, чем просто сервис такси. Мы – команда профессионалов с многолетним опытом в сфере перевозок, которые знают, что действительно важно для водителей и автопарков. Мы сами прошли этот путь и понимаем все его нюансы.
+                    </p>
+                    <p data-translate="aboutDriver">
+                        🚖 Водитель – это партнёр, а не работник
+                        Мы строим долгосрочные и доверительные отношения с каждым, кто сотрудничает с нами. В PartnerHub вы не просто выполняете заказы – вы становитесь частью команды, где вас ценят и уважают.
+                    </p>
+                    <p data-translate="aboutLanguage">
+                        🌍 Языковой барьер – не проблема
+                        Мы знаем, как сложно начинать работу в новой стране, особенно если есть сложности с языком. В PartnerHub мы помогаем адаптироваться и решать организационные вопросы, чтобы вы могли сосредоточиться на главном – своей работе.
+                    </p>
+                    <p data-translate="aboutPriorities">
+                        ⚡ Наши приоритеты: лояльность, качество, скорость
+                        • Лояльность – уважение и честное отношение к каждому водителю.
+                        • Качество – прозрачные условия работы и поддержка на каждом этапе.
+                        • Скорость – мы знаем, насколько важен быстрый старт, поэтому делаем всё, чтобы вы могли выйти на линию без лишних задержек.
+                    </p>
+                    <p data-translate="aboutJoin">
+                        Присоединяйтесь к PartnerHub – здесь ценят ваш труд, поддерживают и помогают развиваться!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2 class="partners-title" data-translate="ourPartners">Наши Партнеры</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="img/uber-icon.png" alt="Uber" class="partner-logo">
+                    <h3 class="partner-name">Uber</h3>
+                </div>
+                <div class="partner-card">
+                    <img src="img/Bolt-cover.png" alt="Bolt" class="partner-logo">
+                    <h3 class="partner-name">Bolt</h3>
+                </div>
+                <div class="partner-card">
+                    <img src="img/FreeNow-2.png" alt="FreeNow" class="partner-logo">
+                    <h3 class="partner-name">FreeNow</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section -->
+    <section class="service-section" id="services">
+        <div class="container">
+            <div class="service-header">
+                <h2 class="service-title" data-translate="serviceTitle">Автосервис с низкими ценами и качественным обслуживанием</h2>
+               
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="card-title" data-translate="regularMaintenance">Регулярное обслуживание</h3>
+                    <p class="card-description" data-translate="maintenanceDesc">Поддерживайте свой автомобиль в отличном состоянии с нашим регулярным техническим обслуживанием</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                            <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="card-title" data-translate="repairs">Ремонт</h3>
+                    <p class="card-description" data-translate="repairsDesc">Профессиональный ремонт для всех марок и моделей автомобилей</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                            <circle cx="7" cy="12" r="2"></circle>
+                            <circle cx="17" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="card-title" data-translate="tireService">Шиномонтаж</h3>
+                    <p class="card-description" data-translate="tireDesc">Замена, ротация и балансировка шин</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title" data-translate="partsReplacement">Замена запчастей</h3>
+                    <p class="card-description" data-translate="partsDesc">Качественные запчасти по конкурентным ценам</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+			<button class="custom-btn" onclick="window.open('https://t.me/PartnerHubot', '_blank')">
+                <a href="https://t.me/PartnerHubot" class="custom-btn" target="_blank" data-translate="signUpService">Запишите меня на сервис</a>
+				</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">
+                        <img src="img/logo/logo1.png" alt="PartnerHub Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                        <span data-translate="brand">PartnerHub</span>
+                    </h3>
+                    <p class="footer-text" data-translate="socialSubscribe">
+                        Подпишитесь на наши социальные сети
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="img/social/telegram.b6a.png" alt="Telegram" class="social-icon">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/social/tiktok.33.png" alt="TikTok" class="social-icon">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/social/facebook.png" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/social/insta.png" alt="Instagram" class="social-icon">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/social/whats.png" alt="WhatsApp" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title" data-translate="quickLinks">Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link-item">
+                            <a href="#hero" class="footer-link" data-translate="home">Главная</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#about" class="footer-link" data-translate="aboutUs">О нас</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#partners" class="footer-link" data-translate="ourPartners">Наши Партнеры</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#services" class="footer-link" data-translate="services">Услуги</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" class="footer-link" data-translate="joinTeam" >Присоединиться к команде</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title" data-translate="contactUs">Свяжитесь с нами</h3>
+                    <div class="contact-item">
+                        <svg class="icon contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span data-translate="address">Ul. Szczęsna 26; 02-454 Warszawa</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span data-translate="phoneNumber">+48 794 736 063</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="icon contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span data-translate="email">taxipartnerhub@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-translate="copyright">&copy; <span id="current-year"></span> PartnerHub. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
