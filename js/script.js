@@ -3,7 +3,10 @@
         const navItems = document.getElementById('nav-items');
         
         mobileMenuButton.addEventListener('click', function() {
-            navItems.classList.toggle('active');
+            const isOpen = navItems.classList.toggle('active');
+            document.body.classList.toggle('menu-open', isOpen);
+            this.setAttribute('aria-expanded', String(isOpen));
+            this.setAttribute('aria-label', isOpen ? 'Закрити меню' : 'Відкрити меню');
         });
         
         // Dropdown functionality
@@ -12,19 +15,25 @@
             
             // Handle button click for mobile
             navButtons.forEach(button => {
+                const dropdownId = button.getAttribute('data-dropdown') + '-dropdown';
+                button.setAttribute('type', 'button');
+                button.setAttribute('aria-controls', dropdownId);
+                button.setAttribute('aria-expanded', 'false');
                 button.addEventListener('click', function() {
-                    const dropdownId = this.getAttribute('data-dropdown') + '-dropdown';
                     const dropdown = document.getElementById(dropdownId);
                     
                     // Close all other dropdowns
                     document.querySelectorAll('.dropdown').forEach(d => {
                         if (d.id !== dropdownId) {
                             d.classList.remove('active');
+                            const otherButton = document.querySelector(`[aria-controls="${d.id}"]`);
+                            if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
                         }
                     });
                     
                     // Toggle current dropdown
-                    dropdown.classList.toggle('active');
+                    const isOpen = dropdown.classList.toggle('active');
+                    this.setAttribute('aria-expanded', String(isOpen));
                 });
             });
             
@@ -72,7 +81,8 @@
                 });
                 
                 // Toggle language dropdown
-                languageDropdown.classList.toggle('active');
+                const isOpen = languageDropdown.classList.toggle('active');
+                languageButton.setAttribute('aria-expanded', String(isOpen));
             });
             
             // Modal functionality
@@ -940,6 +950,45 @@
             document.addEventListener('click', function(event) {
                 if (!event.target.closest('.language-selector')) {
                     languageDropdown.classList.remove('active');
+                    languageButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Mobile-friendly navigation: close the panel after navigation, outside taps or Escape.
+            navItems.addEventListener('click', function(event) {
+                if (window.innerWidth < 992 && event.target.closest('.dropdown-item')) {
+                    navItems.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.setAttribute('aria-label', 'Відкрити меню');
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth < 992 && navItems.classList.contains('active') &&
+                    !event.target.closest('#nav-items') && !event.target.closest('#mobile-menu-button')) {
+                    navItems.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButton.setAttribute('aria-label', 'Відкрити меню');
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    document.querySelectorAll('.dropdown, .language-dropdown').forEach(item => item.classList.remove('active'));
+                    navItems.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    languageButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 992) {
+                    navItems.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
                 }
             });
             
