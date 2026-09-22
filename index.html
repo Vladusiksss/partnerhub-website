@@ -14,17 +14,17 @@
     <!-- Header and Navigation -->
     <header id="header">
         <div class="container header-container">
-            <a href="/" class="logo">
+            <a href="#hero" class="logo" aria-label="PartnerHub — на головну сторінку">
                 <img src="img/logo/header_logo1.png" alt="PartnerHub Logo" class="logo-img">
                 <span data-translate="brand">PartnerHub</span>
             </a>
             <nav>
-                <button class="mobile-menu-button" id="mobile-menu-button">
+                <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Відкрити меню" aria-controls="nav-items" aria-expanded="false">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <div class="nav-items" id="nav-items">
+                <div class="nav-items" id="nav-items" aria-label="Основна навігація">
                     <div class="nav-item">
                         <button class="nav-button" data-dropdown="taxi">
                             <span data-translate="taxi">Такси</span>
@@ -116,7 +116,7 @@
                 
                 <!-- Language Selector -->
                 <div class="language-selector">
-                    <button class="language-button" id="language-button">
+                    <button class="language-button" id="language-button" type="button" aria-label="Обрати мову" aria-controls="language-dropdown" aria-expanded="false">
                         <svg class="language-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -137,6 +137,11 @@
             </nav>
         </div>
     </header>
+
+    <div class="mobile-quick-actions" aria-label="Швидкий зв’язок">
+        <a class="quick-action quick-action-call" href="tel:+48794736063" aria-label="Зателефонувати">☎ <span>Call</span></a>
+        <a class="quick-action quick-action-chat" href="https://t.me/PartnerHubot" target="_blank" rel="noopener noreferrer" aria-label="Написати в Telegram">✈ <span>Telegram</span></a>
+    </div>
 
     <!-- Welcome Section -->
     <section class="hero" id="hero">
